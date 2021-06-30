@@ -1,0 +1,168 @@
+SECTION1:
+-----------
+ SQL queries
+
+1. I have two table TABLE1,TABLE2 which have same metadata and few records are same in both the tables.
+     How to get the Records which from Table1 which are not in Table2 without joins concept.
+
+2. Difference between Row id,Ronum,Row_number? Also difference between rank and dense_rank()
+
+3. How will you sort the data in Oracle without Orderby?
+
+4. Difference between Union and union all?
+
+5. How you delete the duplicate records in a table without rowid concept?
+
+6. Query to display middle records drop first 5 last 5 records in emp table
+   select * from emp where rownum<=(select count(*)-5 from emp) - select * from emp where rownum<=5;
+7.  
+
+
+
+  SECTIONS2 ---DATASTAGE
+---------------------------
+
+1. I have file which comes everyday with good number of records, if file received with 0 records job should fail.
+    How will you design the job?
+
+2. We receive a file everyday with more than 1000000 records ... but job failed because in the 499999th record, 5th column 
+     value should be a date but an integer value arrived.
+       Job Design SequentialFile ---> Oracle Connector.
+
+     how you will you handle this ?
+     D-1 data.
+
+3. Performance tuning activities you have done in your project.
+
+4. Tell me the most complex job you designed in your project?
+
+5. Howmany ways we can sort the data in Datastage?
+
+6. Difference between keychange column and Cluster key Change column in sort stage...can you explain with an example ?
+
+7. src1  src2
+   1     1    
+   1     1  
+   1
+   1
+
+   Output of IJ,LO,RO,FO
+
+8. Purpose of Merge stage and why we use it in Datastage?
+
+9  Input:
+   
+   EID,Leave_st_dt,Leave_End_dt
+-----------------------------------
+   234,2021-06-14,2021-06-19
+   239,2021-06-22,2021-06-23
+
+  
+  Output:
+   
+   EID,Leave_dt
+-----------------
+   234,2021-06-14
+   234,2021-06-15
+   234,2021-06-16
+   234,2021-06-17
+   234,2021-06-18
+   239,2021-06-22
+   239,2021-06-23
+
+10. How will you design a job for this scenario without using RD,Sort stages?
+    Input Data:
+       Sr_no, Name
+	10,a
+	10,b
+	20,c
+	30,d
+	30,e
+	40,f
+
+     Target1	Target2
+     -------    -------
+     20,c	10,a
+     40,f       10,b
+		20,c
+		30,d
+		30,e
+11.  Can you implement a SCD-Type1 operation without a surrogate key & without SCD-Stage?
+
+
+12. When Performing SCD-Type2 what are the operations needs to be performed?
+        Insert --new records with new key
+        Update --? which operation you will perform first?
+
+13. What is Junk dimension? what are the dimensions you know apart from Slowloy changing dimension?
+
+14. 
+	Input data:
+          siva134@yahoo.com
+          krishna27@gmail.com
+          shinde12@hotmail.com
+          Tarun34@outlook.com
+
+	Output data1:     Output data2:
+        --------------------------------
+           yahoo		siva1234
+           gmail                krishna27
+           hotmail		shinde12 
+           outlook              Tarun34
+
+15. How can you generate dummy data using Datastage job?
+
+
+ATTITUDE:
+---------
+
+
+
+
+
+
+
+
+
+SECTION3: UNIX Interview Questions
+-----------------------------------
+ 1. What is the command to unzip all the zip files in the current directory?
+
+ 2. What is the command to delete all the files which have pattern VUT_DAT* in current directory?
+
+ 3. Write a command to find the length of a line in a file?
+
+	sed -n '10 p' filename|wc -c
+
+4. Write a command to convert a string from lower case to upper case?
+	echo "apple" | tr [a-z] [A-Z]
+5. Write a command to list the files in '/usr' directory that start with 'ch' and then display the number of lines in each file?
+	I)  wc -l /usr/ch*
+	
+	II) find /usr -name 'ch*' -type f -exec wc -l {} \;
+
+6. Display zero byte size files in the current directory?
+     
+     find -size 0 -type f
+
+7.  Write a command to print the line number before each line?
+	awk '{print NR, $0}' filename
+
+8. Write a command to print the second and third line of a file without using NR.
+	awk 'BEGIN {RS="";FS="\n"} {print $2,$3}' filename
+
+9. How to replace ^M character in VI editor/sed?
+
+     :%s/(ctrl-v)(ctrl-m)//g   when file opened in vi editor
+
+     sed -e "s/^M//g" old_file_name > new_file_name   to copy the modified content to new file
+
+10. Write a unix command to display the contents of the file by trimming ?
+
+
+11. How to delete the duplicate records from a file ? 
+
+
+
+Technologies he wants to learns:
+-------------------------------
